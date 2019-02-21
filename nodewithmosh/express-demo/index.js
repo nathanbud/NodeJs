@@ -8,10 +8,12 @@ res.send('Hello World');
 });
 
 app.get('/api/courses', (req, res) => {
-
     res.send([1, 2, 3]);
 });
 
-const port = process.env.PORT;
+app.get('/api/courses/:id', (req, res) =>{
+res.send(req.params.id);
+});
 
+const port = process.env.PORT;
 app.listen(port, () => console.log(`Listening on port ${port}...`));
